@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
   const database = client.db('iptracker');
   const collection = database.collection('ips');
-  collection.insertOne({ ip: ip, date: new Date() });
+  collection.insertOne({ information: req, date: new Date() });
 })
 
 app.listen(port, () => {
