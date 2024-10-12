@@ -16,6 +16,8 @@ const client = new MongoClient(uri, {
 app.get('/', (req, res) => {
   res.send({ message: 'OK! passt!' })
 
+  console.log(req);
+
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   console.log(ip)
 
